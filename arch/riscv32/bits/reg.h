@@ -1,2 +1,2 @@
 #undef __WORDSIZE
-#define __WORDSIZE 64
+#define __WORDSIZE 32

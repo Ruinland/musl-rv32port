@@ -1,5 +1,12 @@
-#define __SYSCALL_LL_E(x) (x)
-#define __SYSCALL_LL_O(x) (x)
+//#error WTF in riscv32/syscall_arch.h
+#define SYSCALL_FADVISE_6_ARG
+#define SYSCALL_IPC_BROKEN_MODE
+
+#define __SYSCALL_LL_E(x) \
+((union { long long ll; long l[2]; }){ .ll = x }).l[0], \
+((union { long long ll; long l[2]; }){ .ll = x }).l[1]
+#define __SYSCALL_LL_O(x) 0, __SYSCALL_LL_E((x))
+
 
 #define __asm_syscall(...) \
 	__asm__ __volatile__ ("ecall\n\t" \
@@ -70,9 +77,3 @@ static inline long __syscall6(long n, long a, long b, long c, long d, long e, lo
 	__asm_syscall("r"(a7), "0"(a0), "r"(a1), "r"(a2), "r"(a3), "r"(a4), "r"(a5))
 }
 
-#define VDSO_USEFUL
-/* We don't have a clock_gettime function.
-#define VDSO_CGT_SYM "__vdso_clock_gettime"
-#define VDSO_CGT_VER "LINUX_2.6" */
-
-#define IPC_64 0
