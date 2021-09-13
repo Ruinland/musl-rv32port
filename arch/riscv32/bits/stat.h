@@ -11,8 +11,12 @@ struct stat {
 	blksize_t st_blksize;
 	int __pad2;
 	blkcnt_t st_blocks;
+	struct {
+		int tv_sec;
+	    unsigned int tv_nsec;
+	} __st_atim32, __st_mtim32, __st_ctim32;
+	unsigned __unused[2];
 	struct timespec st_atim;
 	struct timespec st_mtim;
 	struct timespec st_ctim;
-	unsigned __unused[2];
 };

@@ -1,1 +1,1 @@
-#COMPAT_SRC_DIRS = compat/time32
+COMPAT_SRC_DIRS = compat/time32

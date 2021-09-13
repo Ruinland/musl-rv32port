@@ -2,7 +2,6 @@
 #define __NR_io_destroy 1
 #define __NR_io_submit 2
 #define __NR_io_cancel 3
-#define __NR_io_getevents 4
 #define __NR_setxattr 5
 #define __NR_lsetxattr 6
 #define __NR_fsetxattr 7
@@ -110,7 +109,7 @@
 #define __NR_timer_settime 110
 #define __NR_timer_delete 111
 #define __NR_clock_settime 112
-#define __NR_clock_gettime 113
+#define __NR_clock_gettime64 403
 #define __NR_clock_getres 114
 #define __NR_clock_nanosleep 115
 #define __NR_syslog 116

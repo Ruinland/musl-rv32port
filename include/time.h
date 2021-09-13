@@ -130,6 +130,9 @@ int stime(const time_t *);
 time_t timegm(struct tm *);
 #endif
 
+#ifndef _REDIR_TIME64
+#define _REDIR_TIME64 1
+#endif
 #if _REDIR_TIME64
 __REDIR(time, __time64);
 __REDIR(difftime, __difftime64);
