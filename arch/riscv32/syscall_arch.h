@@ -2,6 +2,7 @@
 #define SYSCALL_FADVISE_6_ARG
 #define SYSCALL_IPC_BROKEN_MODE
 #define SYS_clock_gettime SYS_clock_gettime64
+#define SYS_rt_sigtimedwait SYS_rt_sigtimedwait_time64
 
 #define __SYSCALL_LL_E(x) \
 ((union { long long ll; long l[2]; }){ .ll = x }).l[0], \
