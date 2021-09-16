@@ -42,9 +42,9 @@ int msgctl(int q, int cmd, struct msqid_ds *buf)
 	if (r >= 0 && (cmd&IPC_TIME64)) {
 		buf = orig;
 		*buf = out;
-		IPC_HILO(buf, msg_stime);
-		IPC_HILO(buf, msg_rtime);
-		IPC_HILO(buf, msg_ctime);
+		//IPC_HILO(buf, msg_stime);
+		//IPC_HILO(buf, msg_rtime);
+		//IPC_HILO(buf, msg_ctime);
 	}
 #endif
 	return __syscall_ret(r);

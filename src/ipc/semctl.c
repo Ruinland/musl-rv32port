@@ -61,8 +61,8 @@ int semctl(int id, int num, int cmd, ...)
 	if (r >= 0 && (cmd&IPC_TIME64)) {
 		arg.buf = orig;
 		*arg.buf = out;
-		IPC_HILO(arg.buf, sem_otime);
-		IPC_HILO(arg.buf, sem_ctime);
+		//IPC_HILO(arg.buf, sem_otime);
+		//IPC_HILO(arg.buf, sem_ctime);
 	}
 #endif
 	return __syscall_ret(r);
