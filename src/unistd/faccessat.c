@@ -53,7 +53,8 @@ int faccessat(int fd, const char *filename, int amode, int flag)
 	if (pid<0 || __syscall(SYS_read, p[0], &ret, sizeof ret) != sizeof(ret))
 		ret = -EBUSY;
 	__syscall(SYS_close, p[0]);
-	__syscall(SYS_wait4, pid, &status, __WCLONE, 0);
+	//__syscall(SYS_wait4, pid, &status, __WCLONE, 0);
+	waitpid(pid, &status, __WCLONE);
 
 	__restore_sigs(&set);
 
