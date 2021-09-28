@@ -221,7 +221,7 @@
 #define __NR_keyctl 219
 #define __NR_clone 220
 #define __NR_execve 221
-#define __NR_mmap 222
+#define __NR_mmap2 222
 #define __NR_fadvise64 223
 #define __NR_swapon 224
 #define __NR_swapoff 225
